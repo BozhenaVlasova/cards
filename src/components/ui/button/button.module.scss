@@ -1,17 +1,100 @@
+@mixin button() {
+  all: unset;
+
+  display: inline-flex;
+  padding: 6px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .primary {
-  background-color: red;
+  @include button();
+  background: var(--color-accent-500, #8c61ff);
+  color: var(--color-light-100, #fff);
+  box-shadow: 0px 4px 18px 0px rgba(140, 97, 255, 0.35);
+  &:active {
+    background: var(--color-accent-700, #704ecc);
+  }
+  &:hover {
+    background: var(--color-accent-300, #a280ff);
+  }
+  &:focus {
+    border: 2px solid var(--color-info-700, #2f68cc);
+    background: var(--color-accent-500, #8c61ff);
+  }
+  &:disabled {
+    background: var(--color-accent-900, #382766);
+    color: var(--color-light-900, #c3c1c7);
+  }
 }
 
 .secondary {
-  background-color: green;
+  @include button();
+  display: flex;
+  align-self: stretch;
+  background: var(--color-dark-300, #4c4c4c);
+  box-shadow: 0px 2px 10px 0px rgba(109, 109, 109, 0.25);
+  color: var(--color-light-100, #fff);
+  &:active {
+    background: var(--color-dark-500, #333);
+  }
+  &:hover {
+    background: var(--color-dark-100, #808080);
+  }
+  &:focus {
+    border: 2px solid var(--color-info-700, #2f68cc);
+    background: var(--color-dark-300, #4c4c4c);
+  }
+  &:disabled {
+    background: var(--color-dark-300, #4c4c4c);
+    color: var(--color-light-900, #C3C1C7);
+  }
 }
 
 .tertiary {
-  background-color: blue;
+  @include button();
+  padding: 8px 28px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-accent-500, #8c61ff);
+  color: var(--color-accent-500, #8c61ff);
+  background: transparent;
+  &:active {
+    border: 1px solid var(--color-accent-700, #704ecc);
+    background: var(-color-accent-900, #382766);
+  }
+  &:hover {
+    border: 1px solid var(--color-accent-700, #704ecc);
+    background: var(--color-dark-500, #333);
+  }
+  &:focus {
+    border: 2px solid var(--color-accent-500, #8c61ff);
+  }
+  &:disabled {
+    border: 1px solid var(--color-accent-900, #382766);
+    color: var(--color-accent-900, #382766);
+  }
 }
 
 .link {
-  background-color: yellow;
+  @include button();
+  padding: 6px 6px;
+  align-items: flex-start;
+  color: var(--color-accent-500, #8c61ff);
+  background: transparent;
+  &:active {
+    color: var(--color-accent-700, #704ecc);
+  }
+  &:hover {
+    color: var(--color-accent-300, #a280ff);
+  }
+  &:focus {
+    color: var(--color-accent-500, #8C61FF);
+    border: 2px solid var(--color-info-700, #2f68cc);
+    border-radius: 20px;
+  }
 }
 
 .fullWidth {
