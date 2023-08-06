@@ -1,0 +1,70 @@
+button {
+  all: unset;
+}
+
+.root {
+  height: 40px;
+  margin: 26px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.checkBoxRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid var(--color-light-900 , #C3C1C7);
+  box-sizing: border-box;
+  &:active::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    z-index: -1;
+    background-color: var(--color-dark-100, #808080);
+    &:active {
+      z-index: 1;
+    }
+  }
+  &:hover::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    z-index: -1;
+    background-color: var(--color-dark-500, #333);
+    &:hover {
+      z-index: 1;
+    }
+  }
+  &:focus::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    padding: 20px;
+    z-index: -1;
+    background-color: var(--color-dark-100, #808080);
+    &:focus {
+      z-index: 1;
+    }
+    &:disabled {
+      background-color: var(--color-dark-100, #808080);
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  padding-left: 15px;
+}
