@@ -1,0 +1,27 @@
+.content {
+  width: 348px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 27px;
+}
+
+.icon {
+  margin-bottom: 19px;
+}
+
+.text {
+  align-self: flex-end;
+  margin-bottom: 66px;
+  color: var(--color-light-900, #c3c1c7);
+  opacity: 0.5;
+  text-align: center;
+}
+
+.sendButton {
+  padding: 6px;
+  margin-bottom: 20px;
+}
