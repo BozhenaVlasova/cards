@@ -9,20 +9,26 @@ import s from './login.module.scss'
 export const Login = () => {
   return (
     <Card>
-      <div className={s.login}>
+      <div className={s.content}>
         <Typography variant="large" className={s.title}>
           Sign In
         </Typography>
-        <Input label="Email" name="email" placeholder="Email" type="email" />
-        <Input label="Password" name="password" placeholder="Password" type="password" />
+        <Input label="Email" name="email" placeholder="Email" type="email" className={s.input} />
+        <Input
+          label="Password"
+          name="password"
+          placeholder="Password"
+          type="password"
+          className={s.input}
+        />
         <CheckBox label="Remember me" />
-        <Typography variant="body2" className={s.forgot}>
+        <Typography variant="body2" className={s.text}>
           Forgot Password?
         </Typography>
-        <Button variant="primary" fullWidth={true} className={s.signIn}>
+        <Button variant="primary" fullWidth={true} className={s.sendButton}>
           Sign In
         </Button>
-        <Typography variant="body2" className={s.text}>
+        <Typography variant="body2" className={s.questionText}>
           Don`t have an account?
         </Typography>
         <Button variant="link">Sign Up</Button>
