@@ -1,8 +1,8 @@
-import { Button } from '../button'
-import { Card } from '../card/card'
-import { CheckBox } from '../checkbox/checkbox'
-import { Input } from '../input/input'
-import { Typography } from '../typography/typography'
+import { Button } from '../../button'
+import { Card } from '../../card/card'
+import { CheckBox } from '../../checkbox/checkbox'
+import { Input } from '../../input/input'
+import { Typography } from '../../typography/typography'
 
 import s from './login.module.scss'
 
