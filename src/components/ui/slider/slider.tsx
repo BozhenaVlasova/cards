@@ -2,6 +2,8 @@ import { FC, useState } from 'react'
 
 import * as RadixSlider from '@radix-ui/react-slider'
 
+import { Typography } from '../typography/typography'
+
 import s from './slider.module.scss'
 
 interface SliderProps {
@@ -25,7 +27,9 @@ export const Slider: FC<SliderProps> = ({ start, finish, minValue, maxValue }) =
   return (
     <div>
       <form className={s.form}>
-        <span className={s.sliderValue}>{minVal}</span>
+        <span className={s.sliderValue}>
+          <Typography variant="body1">{minVal}</Typography>
+        </span>
         <RadixSlider.Root
           className={s.sliderRoot}
           defaultValue={[minVal, maxVal]}
@@ -40,7 +44,9 @@ export const Slider: FC<SliderProps> = ({ start, finish, minValue, maxValue }) =
           <RadixSlider.Thumb className={s.sliderThumb} />
           <RadixSlider.Thumb className={s.sliderThumb} />
         </RadixSlider.Root>
-        <span className={s.sliderValue}>{maxVal}</span>
+        <span className={s.sliderValue}>
+          <Typography variant="body1">{maxVal}</Typography>
+        </span>
       </form>
     </div>
   )
