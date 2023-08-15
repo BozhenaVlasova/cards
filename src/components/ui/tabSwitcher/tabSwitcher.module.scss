@@ -1,0 +1,41 @@
+button {
+  all: unset;
+}
+
+.tabsRoot {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.tabsList {
+  display: inline-flex;
+}
+
+.tabsTrigger {
+  display: flex;
+  padding: 6px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--color-dark-300, #4c4c4c);
+  &[data-state='active'] {
+    border-color: var(--color-accent-500, #8c61ff);
+    background-color: var(--color-accent-500, #8c61ff);
+  }
+  &:hover {
+    border-color: 1px solid var(--color-dark-100, #808080);
+    background-color: var(--color-dark-300, #4c4c4c);
+    color: var(--color-light-900, #c3c1c7);
+  }
+  &:disabled {
+    border-color: var(--color-dark-300, #4c4c4c);
+    background-color: var(--color-dark-700, #171717);
+    color: var(--color-dark-300, #4c4c4c);
+  }
+  &:first-child {
+    border-radius: 2px 0px 0px 2px;
+  }
+  &:last-child {
+    border-radius: 0px 2px 2px 0px;
+  }
+}
