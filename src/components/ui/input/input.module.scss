@@ -1,0 +1,68 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.label {
+  color: var(--color-dark-100, #808080);
+  &:disabled {
+    color: var(--color-dark-300, #4c4c4c);
+  }
+  &.error {
+    color: var(--color-danger-300, #f23d61);
+  }
+}
+
+.input {
+  all: unset;
+  width: 284px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  border: 1px solid var(--color-dark-300, #4c4c4c);
+  color: var(--color-dark-100, #808080);
+  padding-left: 12px;
+  margin-bottom: 24px;
+  &:active {
+    border-radius: 2px;
+    border: 1px solid var(--color-light-100, #fff);
+  }
+  &.error {
+    border: 1px solid var(--color-danger-300, #f23d61);
+    color: var(--color-danger-300, #f23d61);
+  }
+  &:hover {
+    border-radius: 2px;
+    border: 1px solid var(--color-dark-100, #808080);
+    background: var(--color-dark-700, #171717);
+  }
+  &:focus {
+    border: 2px solid var(--color-info-700, #2f68cc);
+    color: var(--color-light-100, #fff);
+  }
+  &:valid {
+    color: var(--color-light-100, #fff);
+  }
+  &:disabled {
+    border: 1px solid var(--color-dark-300, #4c4c4c);
+    color: var(--color-dark-300, #4c4c4c);
+  }
+}
+
+.error {
+  all: unset;
+  color: var(--color-danger-300, #f23d61);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.eyeButton {
+  position: absolute;
+  background-color: transparent;
+  cursor: pointer;
+  top: 8px;
+  right: 12px;
+}
