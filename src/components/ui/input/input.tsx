@@ -9,7 +9,7 @@ import s from './input.module.scss'
 interface InputProps {
   type: 'text' | 'number' | 'email' | 'password'
   children?: ReactNode
-  label: string
+  label?: string
   value: string | number
   name: string
   placeholder: string
