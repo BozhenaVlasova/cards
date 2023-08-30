@@ -1,0 +1,29 @@
+.packsList {
+  width: 1006px;
+  margin: 0 auto;
+  padding-top: 33px;
+}
+
+.packsHeader,
+.packsFilter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.packsInputSearch {
+  display: flex;
+  align-items: flex-end;
+}
+
+.packsInput {
+  margin-bottom: 0;
+  width: 275px;
+}
+
+.packsSwitcher,
+.packsSlider,
+.packsFilterButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
