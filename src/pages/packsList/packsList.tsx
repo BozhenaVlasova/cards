@@ -1,6 +1,7 @@
 import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input/input'
 import { Slider } from '../../components/ui/slider/slider'
+import { TableComponent } from '../../components/ui/table/table'
 import { TabSwitcher } from '../../components/ui/tabSwitcher/tabSwitcher'
 import { Typography } from '../../components/ui/typography/typography'
 import SvgTrash from '../../icons/trash'
@@ -9,7 +10,7 @@ import s from './packsList.module.scss'
 
 export const PacksList = () => {
   return (
-    <div className={s.packsList}>
+    <div>
       <div className={s.packsHeader}>
         <Typography variant="large">Packs List</Typography>
         <Button variant="primary">
@@ -47,6 +48,7 @@ export const PacksList = () => {
           </Button>
         </div>
       </div>
+      <TableComponent />
     </div>
   )
 }

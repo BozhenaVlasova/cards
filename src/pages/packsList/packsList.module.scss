@@ -1,13 +1,12 @@
-.packsList {
-  width: 1006px;
-  margin: 0 auto;
-  padding-top: 33px;
+.packsHeader {
+  display: flex;
+  justify-content: space-between;
 }
 
-.packsHeader,
 .packsFilter {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 36px;
 }
 
 .packsInputSearch {
