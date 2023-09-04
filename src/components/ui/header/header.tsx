@@ -6,10 +6,10 @@ import s from './header.module.scss'
 export const Header = () => {
   return (
     <header className={s.header}>
-      <SvgLogo className={s.logo} />
-      <Button variant="primary" className={s.button}>
-        Sign In
-      </Button>
+      <div className={s.logoAndButton}>
+        <SvgLogo />
+        <Button variant="primary">Sign In</Button>
+      </div>
     </header>
   )
 }
