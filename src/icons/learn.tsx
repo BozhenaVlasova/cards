@@ -1,6 +1,14 @@
 import { SVGProps } from 'react'
+
 const SvgLearn = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="#fff" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    viewBox="0 0 24 24"
+    fill="#fff"
+    {...props}
+  >
     <path
       fill="#fff"
       d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"
