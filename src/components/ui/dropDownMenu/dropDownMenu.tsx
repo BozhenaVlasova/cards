@@ -47,18 +47,14 @@ export const DropdownMenuComponent: FC<DropdownPersonType> = ({ value, name, ima
 
               <DropdownMenu.CheckboxItem className={s.dropdownMenuCheckboxItem}>
                 <SvgPesron />
-                <Typography variant="caption" className={s.label}>
-                  My Profile
-                </Typography>
+                <Typography variant="caption">My Profile</Typography>
               </DropdownMenu.CheckboxItem>
 
               <DropdownMenu.Separator className={s.dropdownMenuSeparator} />
 
               <DropdownMenu.CheckboxItem className={s.dropdownMenuCheckboxItem}>
                 <SvgLogout />
-                <Typography variant="caption" className={s.label}>
-                  Sign Out
-                </Typography>
+                <Typography variant="caption">Sign Out</Typography>
               </DropdownMenu.CheckboxItem>
 
               <DropdownMenu.Arrow className={s.dropdownMenuArrow} />
@@ -78,27 +74,21 @@ export const DropdownMenuComponent: FC<DropdownPersonType> = ({ value, name, ima
             <DropdownMenu.Content className={s.dropdownMenuContent} sideOffset={5}>
               <DropdownMenu.CheckboxItem className={s.dropdownMenuCheckboxItem}>
                 <SvgLearn />
-                <Typography variant="caption" className={s.label}>
-                  Learn
-                </Typography>
+                <Typography variant="caption">Learn</Typography>
               </DropdownMenu.CheckboxItem>
 
               <DropdownMenu.Separator className={s.dropdownMenuSeparator} />
 
               <DropdownMenu.CheckboxItem className={s.dropdownMenuCheckboxItem}>
                 <SvgEdit />
-                <Typography variant="caption" className={s.label}>
-                  Edit
-                </Typography>
+                <Typography variant="caption">Edit</Typography>
               </DropdownMenu.CheckboxItem>
 
               <DropdownMenu.Separator className={s.dropdownMenuSeparator} />
 
               <DropdownMenu.CheckboxItem className={s.dropdownMenuCheckboxItem}>
                 <SvgTrash />
-                <Typography variant="caption" className={s.label}>
-                  Delete
-                </Typography>
+                <Typography variant="caption">Delete</Typography>
               </DropdownMenu.CheckboxItem>
 
               <DropdownMenu.Arrow className={s.dropdownMenuArrow} />
