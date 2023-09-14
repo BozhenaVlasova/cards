@@ -14,38 +14,44 @@ interface SelectType {
 }
 
 interface SelectItemType {
+  label: string
   values: SelectType[]
 }
 
-export const SelectDemo: FC<SelectItemType> = ({ values }) => (
-  <Select.Root>
-    <Select.Trigger className={s.SelectTrigger}>
-      <Select.Value placeholder={values[0].item} />
-      <Select.Icon className={s.SelectIcon}>
-        <ChevronDownIcon />
-      </Select.Icon>
-    </Select.Trigger>
-    <Select.Portal>
-      <Select.Content className={s.SelectContent}>
-        <Select.ScrollUpButton className={s.SelectScrollButton}>
-          <ChevronUpIcon />
-        </Select.ScrollUpButton>
-        <Select.Viewport>
-          <Select.Group>
-            {values.map(i => (
-              <Select.Item key={i.id} value={i.value} className={s.Item}>
-                <Select.ItemText>
-                  <Typography variant="body1">{i.item}</Typography>
-                </Select.ItemText>
-                <Select.ItemIndicator className={s.SelectItemIndicator}></Select.ItemIndicator>
-              </Select.Item>
-            ))}
-          </Select.Group>
-        </Select.Viewport>
-        <Select.ScrollDownButton className={s.SelectScrollButton}>
+export const SelectComponent: FC<SelectItemType> = ({ label, values }) => (
+  <div className={s.selectRoot}>
+    <Select.Root>
+      <Typography variant="body2" className={s.selectLabel}>
+        {label}
+      </Typography>
+      <Select.Trigger className={s.SelectTrigger}>
+        <Select.Value placeholder={values[0].item} />
+        <Select.Icon className={s.SelectIcon}>
           <ChevronDownIcon />
-        </Select.ScrollDownButton>
-      </Select.Content>
-    </Select.Portal>
-  </Select.Root>
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Content className={s.SelectContent}>
+          <Select.ScrollUpButton className={s.SelectScrollButton}>
+            <ChevronUpIcon />
+          </Select.ScrollUpButton>
+          <Select.Viewport>
+            <Select.Group>
+              {values.map(i => (
+                <Select.Item key={i.id} value={i.value} className={s.Item}>
+                  <Select.ItemText>
+                    <Typography variant="body1">{i.item}</Typography>
+                  </Select.ItemText>
+                  <Select.ItemIndicator className={s.SelectItemIndicator}></Select.ItemIndicator>
+                </Select.Item>
+              ))}
+            </Select.Group>
+          </Select.Viewport>
+          <Select.ScrollDownButton className={s.SelectScrollButton}>
+            <ChevronDownIcon />
+          </Select.ScrollDownButton>
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+  </div>
 )
