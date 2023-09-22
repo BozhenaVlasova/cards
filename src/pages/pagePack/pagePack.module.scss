@@ -1,0 +1,52 @@
+button {
+  all: unset;
+}
+
+.collapsibleRoot {
+  display: flex;
+  flex-direction: column;
+}
+
+.common {
+  align-items: flex-start;
+}
+
+.backPage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding-bottom: 36px;
+}
+
+.textCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 45px;
+}
+
+.IconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 292px;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 41px;
+}
+
+.try {
+  color: var(--color-dark-100, #808080);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 29px;
+}
