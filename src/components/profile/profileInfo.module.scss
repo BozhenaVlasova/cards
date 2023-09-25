@@ -1,0 +1,72 @@
+.profileInfo {
+  padding: 33px 33px 41px;
+}
+
+.title {
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 6px;
+  > div {
+    position: relative;
+
+    > img {
+      height: 96px;
+      width: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    > .editAvatarButton {
+      all: unset;
+      display: flex;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background: var(--color-dark-300, #4c4c4c);
+      box-shadow: 0px 2px 10px 0px rgba(109, 109, 109, 0.25);
+      cursor: pointer;
+      right: 0;
+      bottom: 0;
+      &:focus-visible {
+        outline: var(--outline-focus);
+      }
+    }
+  }
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 6px;
+  gap: 9px;
+  > svg {
+    cursor: pointer;
+  }
+}
+
+.profileName {
+  width: 100%;
+}
+
+.email {
+  text-align: center;
+  color: var(--color-dark-100, #808080);
+  margin-bottom: 13px;
+}
+
+.logout,
+.saveName {
+  display: flex;
+  justify-content: center;
+}
