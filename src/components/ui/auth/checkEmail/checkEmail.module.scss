@@ -14,7 +14,6 @@
 }
 
 .text {
-  align-self: flex-end;
   margin-bottom: 66px;
   color: var(--color-light-900, #c3c1c7);
   opacity: 0.5;
@@ -22,6 +21,7 @@
 }
 
 .sendButton {
-  padding: 6px;
   margin-bottom: 20px;
+  display: flex;
+  width: 100%;
 }

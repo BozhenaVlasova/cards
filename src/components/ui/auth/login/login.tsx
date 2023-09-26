@@ -13,21 +13,33 @@ export const Login = () => {
         <Typography variant="large" className={s.title}>
           Sign In
         </Typography>
-        <Input label="Email" name="email" placeholder="Email" type="email" className={s.input} />
-        <Input
-          label="Password"
-          name="password"
-          placeholder="Password"
-          type="password"
-          className={s.input}
-        />
+        <div className={s.input}>
+          <Input
+            label="Email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            onChange={() => {}}
+            value={''}
+          />
+          <Input
+            label="Password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            onChange={() => {}}
+            value={''}
+          />
+        </div>
         <CheckBox label="Remember me" />
         <Typography variant="body2" className={s.text}>
           Forgot Password?
         </Typography>
-        <Button variant="primary" fullWidth={true} className={s.sendButton}>
-          Sign In
-        </Button>
+        <div className={s.sendButton}>
+          <Button variant="primary" fullWidth>
+            <Typography variant="subtitle2">Sign In</Typography>
+          </Button>
+        </div>
         <Typography variant="body2" className={s.questionText}>
           Don`t have an account?
         </Typography>

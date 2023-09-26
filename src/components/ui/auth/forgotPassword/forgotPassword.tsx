@@ -12,13 +12,22 @@ export const ForgotPassword = () => {
         <Typography variant="large" className={s.title}>
           Forgot your password?
         </Typography>
-        <Input label="Email" name="email" placeholder="Email" type="email" className={s.input} />
+        <Input
+          label="Email"
+          name="email"
+          placeholder="Email"
+          type="email"
+          onChange={() => {}}
+          value={''}
+        />
         <Typography variant="body2" className={s.text}>
           Enter your email address and we will send you further instructions
         </Typography>
-        <Button variant="primary" fullWidth={true} className={s.sendButton}>
-          Send Insrtuctions
-        </Button>
+        <div className={s.sendButton}>
+          <Button variant="primary" fullWidth>
+            <Typography variant="subtitle2">Send Insrtuctions</Typography>
+          </Button>
+        </div>
         <Typography variant="body2" className={s.questionText}>
           Did you remember your password?
         </Typography>

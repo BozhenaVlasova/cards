@@ -10,7 +10,11 @@
 }
 
 .input {
-  width: 348px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 18px;
 }
 
 .text {
@@ -19,7 +23,8 @@
 }
 
 .sendButton {
-  padding: 6px;
+  display: flex;
+  width: 100%;
   margin-bottom: 20px;
 }
 

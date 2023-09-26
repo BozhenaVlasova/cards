@@ -12,24 +12,37 @@ export const SignUp = () => {
         <Typography variant="large" className={s.title}>
           Sign Up
         </Typography>
-        <Input label="Email" name="email" placeholder="Email" type="email" className={s.input} />
-        <Input
-          label="Password"
-          name="password"
-          placeholder="Password"
-          type="password"
-          className={s.input}
-        />
-        <Input
-          label="Confirm Password"
-          name="password"
-          placeholder="Confirm Password"
-          type="password"
-          className={s.input}
-        />
-        <Button variant="primary" fullWidth={true} className={s.sendButton}>
-          Sign Up
-        </Button>
+        <div className={s.input}>
+          <Input
+            label="Email"
+            name="email"
+            placeholder="Email"
+            type="email"
+            onChange={() => {}}
+            value={''}
+          />
+          <Input
+            label="Password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            onChange={() => {}}
+            value={''}
+          />
+          <Input
+            label="Confirm Password"
+            name="password"
+            placeholder="Confirm Password"
+            type="password"
+            onChange={() => {}}
+            value={''}
+          />
+        </div>
+        <div className={s.sendButton}>
+          <Button variant="primary" fullWidth>
+            <Typography variant="subtitle2">Sign Up</Typography>
+          </Button>
+        </div>
         <Typography variant="body2" className={s.text}>
           Already have an account?
         </Typography>
