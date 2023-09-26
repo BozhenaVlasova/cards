@@ -1,13 +1,16 @@
 import { ChangeEvent, FC, ReactNode, useState } from 'react'
 
+import { TextField } from '@radix-ui/themes'
+
 import SvgEyeOffOutline from '../../../icons/eyeOffOutline'
 import SvgEyeOutline from '../../../icons/eyeOutline'
+import SvgSearch from '../../../icons/search'
 import { Typography } from '../typography/typography'
 
 import s from './input.module.scss'
 
 interface InputProps {
-  type: 'text' | 'number' | 'email' | 'password'
+  type: 'text' | 'number' | 'email' | 'password' | 'search'
   children?: ReactNode
   label?: string
   value: string | number
@@ -38,26 +41,33 @@ export const Input: FC<InputProps> = ({
   }
 
   return (
-    <div className={s.inputWrapper}>
+    <div className={s.inputContainer}>
       <label htmlFor={label} className={s.label}>
         <Typography variant="body2">{label}</Typography>
       </label>
-      <div className={s.inputContainer}>
-        <input
+      <TextField.Root className={s.inputWrapper}>
+        {type === 'search' && (
+          <TextField.Slot className={s.search}>
+            <SvgSearch />
+          </TextField.Slot>
+        )}
+        <TextField.Input
           type={showPassword ? 'text' : type}
           id={label}
           name={name}
           placeholder={placeholder}
-          className={`${className} ${s.input}`}
+          className={s.input}
           {...rest}
         />
         {type === 'password' && (
-          <button type="button" className={s.eyeButton} onClick={handleTogglePassword}>
-            {showPassword ? <SvgEyeOutline /> : <SvgEyeOffOutline />}
-          </button>
+          <TextField.Slot>
+            <button type="button" className={s.eyeButton} onClick={handleTogglePassword}>
+              {showPassword ? <SvgEyeOutline /> : <SvgEyeOffOutline />}
+            </button>
+          </TextField.Slot>
         )}
-      </div>
-      {error && <p className={s.error}>{<Typography variant="caption">Error!</Typography>}</p>}
+        {error && <p className={s.error}>{<Typography variant="caption">Error!</Typography>}</p>}
+      </TextField.Root>
     </div>
   )
 }
