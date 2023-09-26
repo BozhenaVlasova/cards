@@ -47,12 +47,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 6px;
   gap: 9px;
   > svg {
     cursor: pointer;
   }
+}
+
+.nameEdit {
+  margin-bottom: 36px;
 }
 
 .profileName {

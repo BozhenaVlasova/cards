@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { ChangeEvent, FC, useState } from 'react'
 
 import SvgEdit from '../../icons/edit'
 import { SvgLogout } from '../../icons/logout'
@@ -13,16 +13,30 @@ interface ProfileInfoType {
   name: string
   avatar: string
   email: string
-  value: 'profile' | 'editProfileName'
 }
 
-export const ProfileInfo: FC<ProfileInfoType> = ({ name, avatar, email, value }) => {
+export const ProfileInfo: FC<ProfileInfoType> = ({ name, avatar, email }) => {
+  const [nameEdit, setNameEdit] = useState(name)
+  const [isOpen, setIsOpen] = useState<boolean>(true)
+
+  const nameProfileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setNameEdit(event.target.value)
+  }
+
+  const nameProfileSaveChanges = () => {
+    setIsOpen(true)
+  }
+
+  const isOpenChange = () => {
+    setIsOpen(false)
+  }
+
   return (
     <Card className={s.profileInfo}>
       <Typography variant="large" className={s.title}>
         Personal Information
       </Typography>
-      {value === 'profile' && (
+      {isOpen ? (
         <>
           <div className={s.photoContainer}>
             <div>
@@ -33,8 +47,8 @@ export const ProfileInfo: FC<ProfileInfoType> = ({ name, avatar, email, value })
             </div>
           </div>
           <div className={s.nameContainer}>
-            <Typography variant="h1">{name}</Typography>
-            <SvgEdit />
+            <Typography variant="h1">{nameEdit}</Typography>
+            <SvgEdit onClick={isOpenChange} />
           </div>
           <Typography variant="body2" className={s.email}>
             {email}
@@ -46,27 +60,26 @@ export const ProfileInfo: FC<ProfileInfoType> = ({ name, avatar, email, value })
             </Button>
           </div>
         </>
-      )}
-      {value === 'editProfileName' && (
+      ) : (
         <>
           <div className={s.photoContainer}>
             <div>
               <img src={avatar} alt={'avatar'} />
             </div>
           </div>
-          <div className={s.nameContainer}>
+          <div className={s.nameEdit}>
             <Input
               name="name"
-              onChange={() => {}}
-              placeholder="Input Name"
+              onChange={nameProfileChange}
+              placeholder="Enter name"
               type="text"
-              value="name"
+              value={nameEdit}
               label="Nickname"
               className={s.profileName}
             />
           </div>
           <div className={s.saveName}>
-            <Button variant="primary" fullWidth>
+            <Button variant="primary" fullWidth onClick={nameProfileSaveChanges}>
               <Typography variant="subtitle2">Save Changes</Typography>
             </Button>
           </div>
