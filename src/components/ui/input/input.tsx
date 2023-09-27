@@ -10,7 +10,7 @@ import { Typography } from '../typography/typography'
 import s from './input.module.scss'
 
 interface InputProps {
-  type: 'text' | 'number' | 'email' | 'password' | 'search'
+  type: 'text' | 'number' | 'email' | 'password' | 'find'
   children?: ReactNode
   label?: string
   value: string | number
@@ -46,7 +46,7 @@ export const Input: FC<InputProps> = ({
         <Typography variant="body2">{label}</Typography>
       </label>
       <TextField.Root className={s.inputWrapper}>
-        {type === 'search' && (
+        {type === 'find' && (
           <TextField.Slot className={s.search}>
             <SvgSearch />
           </TextField.Slot>
