@@ -1,0 +1,91 @@
+button,
+fieldset,
+input,
+svg {
+  all: unset;
+}
+
+.dialogOverlay {
+  background: var(--color-dark-900, #000);
+  opacity: 0.7;
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dialogContent {
+  background-color: var(--color-dark-700, #171717);
+  border-radius: 2px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 542px;
+  border: 1px solid var(--dark-500, #333);
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  &:focus {
+    outline: none;
+  }
+}
+
+.dialogTitle {
+  display: flex;
+  padding: 18px 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--dark-500, #333);
+}
+
+.title {
+  margin: 0;
+  color: var(--color-light-100, #fff);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  &:hover {
+    background-color: var(--color-dark-100, #808080);
+  }
+}
+
+.dialogFieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 24px;
+}
+
+.dialogButton {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px 36px 24px;
+}
+
+.deleteMessage {
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
