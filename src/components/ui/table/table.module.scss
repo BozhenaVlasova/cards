@@ -1,0 +1,70 @@
+table,
+thead,
+tr,
+th,
+tbody {
+  all: unset;
+}
+
+.tableRoot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tableHeader {
+  display: flex;
+  background-color: var(--color-dark-500, #333333);
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  padding: 6px 24px;
+  gap: 10px;
+  border-right: 1px solid var(--color-dark-500, #333);
+  border-bottom: 1px solid var(--color-dark-500, #333);
+  border-left: 1px solid var(--color-dark-500, #333);
+}
+
+.tableCell {
+  width: 201px;
+}
+
+.tCell {
+  width: 301px;
+}
+
+.tableDate {
+  width: 168px;
+}
+
+.tDate {
+  width: 131px;
+}
+
+.properties {
+  display: flex;
+  width: 117px;
+  gap: 10px;
+  padding-left: 24px;
+}
+
+.pMyPack {
+  width: 68px;
+}
+
+.grade {
+  display: flex;
+  gap: 10px;
+  width: 120px;
+}
+
+.svg {
+  cursor: pointer;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
