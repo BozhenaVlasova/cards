@@ -4,6 +4,8 @@ import { Slider } from '../../components/ui/slider/slider'
 import { TableComponent } from '../../components/ui/table/table'
 import { TabSwitcher } from '../../components/ui/tabSwitcher/tabSwitcher'
 import { Typography } from '../../components/ui/typography/typography'
+import SvgEdit from '../../icons/edit'
+import SvgLearn from '../../icons/learn'
 import SvgTrash from '../../icons/trash'
 
 import s from './packsList.module.scss'
@@ -20,7 +22,7 @@ export const PacksList = () => {
       <div className={s.packsFilter}>
         <div className={s.packsInputSearch}>
           <Input
-            type="text"
+            type="find"
             name="search"
             placeholder="Search"
             value={''}
@@ -43,12 +45,26 @@ export const PacksList = () => {
         </div>
         <div className={s.packsFilterButton}>
           <Button variant="secondary">
-            <SvgTrash width={16} height={16} />
+            <SvgTrash />
             <Typography variant="subtitle2">Clear Filter</Typography>
           </Button>
         </div>
       </div>
-      <TableComponent />
+      <TableComponent
+        variant="packList"
+        headerTitle={['Name', 'Cards', 'Last Updated', 'Created by']}
+        valueBody={[
+          'Pack Name',
+          '4',
+          '18.03.2021',
+          'Ivan Ivanov',
+          <>
+            <SvgLearn className={s.svg} />
+            <SvgEdit className={s.svg} />
+            <SvgTrash className={s.svg} />
+          </>,
+        ]}
+      />
     </div>
   )
 }
