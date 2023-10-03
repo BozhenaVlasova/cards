@@ -1,0 +1,32 @@
+.myPack {
+  display: flex;
+  flex-direction: column;
+}
+
+.backPage {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.common {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 33px;
+  margin-bottom: 24px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search {
+  margin-bottom: 24px;
+}
+
+.svg {
+  cursor: pointer;
+}
