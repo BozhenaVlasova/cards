@@ -10,12 +10,19 @@ import s from './checkbox.module.scss'
 
 interface CheckBoxProps {
   label?: ReactNode
+  checked?: boolean
+  onChange?: (checked: boolean) => void
 }
 
-export const CheckBox: FC<CheckBoxProps> = ({ label }) => {
+export const CheckBox: FC<CheckBoxProps> = ({ label, checked, onChange }) => {
   return (
     <div className={s.root}>
-      <Checkbox.Root className={s.checkBoxRoot} defaultChecked id="c1">
+      <Checkbox.Root
+        className={s.checkBoxRoot}
+        defaultChecked
+        checked={checked}
+        onCheckedChange={onChange}
+      >
         <Checkbox.Indicator className={s.CheckboxIndicator}>
           <SvgCheckBox className={s.icon} />
         </Checkbox.Indicator>
