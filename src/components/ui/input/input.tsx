@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, ReactNode, useState } from 'react'
+import { ChangeEvent, useState, ComponentPropsWithoutRef, forwardRef } from 'react'
 
 import { TextField } from '@radix-ui/themes'
 
@@ -9,65 +9,59 @@ import { Typography } from '../typography/typography'
 
 import s from './input.module.scss'
 
-interface InputProps {
+type InputProps = {
   type: 'text' | 'number' | 'email' | 'password' | 'find'
-  children?: ReactNode
   label?: string
-  value: string | number
-  name: string
-  placeholder: string
   error?: boolean
-  className?: string
-  disabled?: boolean
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
-}
+  reg?: any
+  onValueChange?: (value: string) => void
+} & ComponentPropsWithoutRef<'input'>
 
-export const Input: FC<InputProps> = ({
-  type,
-  label,
-  value,
-  name,
-  placeholder,
-  error,
-  className,
-  disabled,
-  onChange,
-  ...rest
-}) => {
-  const [showPassword, setShowPassword] = useState(false)
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ type, label, placeholder, error, onChange, onValueChange, reg }, ref) => {
+    const [showPassword, setShowPassword] = useState(false)
+    const [inputValue, setInputValue] = useState('')
 
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword)
+    const handleTogglePassword = () => {
+      setShowPassword(!showPassword)
+    }
+
+    function handleChange(e: ChangeEvent<HTMLInputElement>) {
+      onChange?.(e)
+      onValueChange?.(e.target.value)
+      setInputValue(e.target.value)
+    }
+
+    return (
+      <div className={s.inputContainer}>
+        <label htmlFor={label} className={s.label}>
+          <Typography variant="body2">{label}</Typography>
+        </label>
+        <TextField.Root className={s.inputWrapper}>
+          {type === 'find' && (
+            <TextField.Slot className={s.search}>
+              <SvgSearch />
+            </TextField.Slot>
+          )}
+          <TextField.Input
+            className={s.input}
+            placeholder={placeholder}
+            ref={ref}
+            type={showPassword ? 'text' : type}
+            {...reg}
+            onChange={handleChange}
+            value={inputValue}
+          />
+          {type === 'password' && (
+            <TextField.Slot>
+              <button type="button" className={s.eyeButton} onClick={handleTogglePassword}>
+                {showPassword ? <SvgEyeOutline /> : <SvgEyeOffOutline />}
+              </button>
+            </TextField.Slot>
+          )}
+          {error && <p className={s.error}>{<Typography variant="caption">Error!</Typography>}</p>}
+        </TextField.Root>
+      </div>
+    )
   }
-
-  return (
-    <div className={s.inputContainer}>
-      <label htmlFor={label} className={s.label}>
-        <Typography variant="body2">{label}</Typography>
-      </label>
-      <TextField.Root className={s.inputWrapper}>
-        {type === 'find' && (
-          <TextField.Slot className={s.search}>
-            <SvgSearch />
-          </TextField.Slot>
-        )}
-        <TextField.Input
-          type={showPassword ? 'text' : type}
-          id={label}
-          name={name}
-          placeholder={placeholder}
-          className={s.input}
-          {...rest}
-        />
-        {type === 'password' && (
-          <TextField.Slot>
-            <button type="button" className={s.eyeButton} onClick={handleTogglePassword}>
-              {showPassword ? <SvgEyeOutline /> : <SvgEyeOffOutline />}
-            </button>
-          </TextField.Slot>
-        )}
-        {error && <p className={s.error}>{<Typography variant="caption">Error!</Typography>}</p>}
-      </TextField.Root>
-    </div>
-  )
-}
+)
