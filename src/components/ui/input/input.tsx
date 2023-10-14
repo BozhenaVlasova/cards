@@ -12,13 +12,13 @@ import s from './input.module.scss'
 type InputProps = {
   type: 'text' | 'number' | 'email' | 'password' | 'find'
   label?: string
-  error?: boolean
+  errorMessage?: string
   reg?: any
   onValueChange?: (value: string) => void
 } & ComponentPropsWithoutRef<'input'>
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ type, label, placeholder, error, onChange, onValueChange, reg }, ref) => {
+  ({ type, label, placeholder, onChange, onValueChange, errorMessage, reg }, ref) => {
     const [showPassword, setShowPassword] = useState(false)
     const [inputValue, setInputValue] = useState('')
 
@@ -59,8 +59,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               </button>
             </TextField.Slot>
           )}
-          {error && <p className={s.error}>{<Typography variant="caption">Error!</Typography>}</p>}
         </TextField.Root>
+        <p className={s.error}>{<Typography variant="caption">{errorMessage}</Typography>}</p>
       </div>
     )
   }
