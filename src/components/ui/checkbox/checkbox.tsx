@@ -8,7 +8,7 @@ import { Typography } from '../typography/typography'
 
 import s from './checkbox.module.scss'
 
-interface CheckBoxProps {
+export type CheckBoxProps = {
   label?: ReactNode
   checked?: boolean
   onChange?: (checked: boolean) => void
