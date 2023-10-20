@@ -1,12 +1,9 @@
+import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useController, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '../../../components/ui/button'
-import { Card } from '../../../components/ui/card/card'
-import { CheckBox } from '../../../components/ui/checkbox/checkbox'
-import { Input } from '../../../components/ui/input/input'
-import { Typography } from '../../../components/ui/typography/typography'
+import { Button, Card, ControlledCheckbox, Input, Typography } from '../../../components'
 
 import s from './login.module.scss'
 
@@ -32,14 +29,6 @@ export const Login = () => {
     console.log(data)
   }
 
-  const {
-    field: { value, onChange },
-  } = useController({
-    name: 'rememberMe',
-    control,
-    defaultValue: false,
-  })
-
   return (
     <Card>
       <div className={s.content}>
@@ -47,6 +36,7 @@ export const Login = () => {
           Sign In
         </Typography>
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'contents' }}>
+          <DevTool control={control} />
           <div className={s.input}>
             <Input
               label="Email"
@@ -63,7 +53,7 @@ export const Login = () => {
               errorMessage={errors.password?.message}
             />
           </div>
-          <CheckBox label="Remember me" checked={value} onChange={onChange} />
+          <ControlledCheckbox label={'remember me'} control={control} name={'rememberMe'} />
           <div className={s.sendButton}>
             <Button type="submit" variant="primary" fullWidth>
               <Typography variant="subtitle2">Sign In</Typography>
