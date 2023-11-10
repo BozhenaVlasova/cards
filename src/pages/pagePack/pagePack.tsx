@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
 import * as Collapsible from '@radix-ui/react-collapsible'
+import { useForm } from 'react-hook-form'
 
+import { ControlledRadioGroup } from '../../components'
 import { Button } from '../../components/ui/button'
 import { Card } from '../../components/ui/card/card'
-import { RadioGroupComponent } from '../../components/ui/radioGroup/radioGroup'
 import { Typography } from '../../components/ui/typography/typography'
 import SvgBack from '../../icons/back'
 
@@ -12,6 +13,8 @@ import s from './pagePack.module.scss'
 
 export const CollapsibleComponent = () => {
   const [open, setOpen] = useState(false)
+
+  const { control } = useForm()
 
   return (
     <Collapsible.Root className={s.collapsibleRoot} open={open} onOpenChange={setOpen}>
@@ -47,13 +50,15 @@ export const CollapsibleComponent = () => {
           </div>
           <div className={s.rate}>
             <Typography variant="subtitle1">Rate yourself:</Typography>
-            <RadioGroupComponent
-              values={[
-                { id: 1, value: 'didNotKnow', label: 'Did not know' },
-                { id: 2, value: 'forgot', label: 'Forgot' },
-                { id: 3, value: 'aLotOfThough', label: 'A lot of though' },
-                { id: 4, value: 'confused', label: 'Confused' },
-                { id: 5, value: 'knewTheAnswer', label: 'Knew the answer' },
+            <ControlledRadioGroup
+              name={'radioGroup'}
+              control={control}
+              options={[
+                { value: 'didNotKnow', label: 'Did not know' },
+                { value: 'forgot', label: 'Forgot' },
+                { value: 'aLotOfThough', label: 'A lot of though' },
+                { value: 'confused', label: 'Confused' },
+                { value: 'knewTheAnswer', label: 'Knew the answer' },
               ]}
             />
           </div>
