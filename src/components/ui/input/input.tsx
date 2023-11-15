@@ -9,16 +9,15 @@ import { Typography } from '../typography/typography'
 
 import s from './input.module.scss'
 
-type InputProps = {
+export type InputProps = {
   type: 'text' | 'number' | 'email' | 'password' | 'find'
   label?: string
   errorMessage?: string
-  reg?: any
   onValueChange?: (value: string) => void
 } & ComponentPropsWithoutRef<'input'>
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ type, label, placeholder, onChange, onValueChange, errorMessage, reg }, ref) => {
+  ({ type, label, placeholder, onChange, onValueChange, errorMessage }, ref) => {
     const [showPassword, setShowPassword] = useState(false)
     const [inputValue, setInputValue] = useState('')
 
@@ -48,7 +47,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder={placeholder}
             ref={ref}
             type={showPassword ? 'text' : type}
-            {...reg}
             onChange={handleChange}
             value={inputValue}
           />

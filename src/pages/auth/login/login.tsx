@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button, Card, ControlledCheckbox, Input, Typography } from '../../../components'
+import { Button, Card, ControlledCheckbox, ControlledInput, Typography } from '../../../components'
 
 import s from './login.module.scss'
 
@@ -38,19 +38,21 @@ export const Login = () => {
         <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'contents' }}>
           <DevTool control={control} />
           <div className={s.input}>
-            <Input
+            <ControlledInput
               label="Email"
               placeholder="Email"
               type="email"
-              reg={register('email')}
+              {...register('email')}
               errorMessage={errors.email?.message}
+              control={control}
             />
-            <Input
+            <ControlledInput
               label="Password"
               placeholder="Password"
               type="password"
-              reg={register('password')}
+              {...register('password')}
               errorMessage={errors.password?.message}
+              control={control}
             />
           </div>
           <ControlledCheckbox label={'remember me'} control={control} name={'rememberMe'} />
