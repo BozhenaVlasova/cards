@@ -1,38 +1,64 @@
-import { Button } from '../../button'
-import { Card } from '../../card/card'
-import { Input } from '../../input/input'
-import { Typography } from '../../typography/typography'
+import { DevTool } from '@hookform/devtools'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { Button, Card, ControlledInput, Typography } from '../../../components'
 
 import s from './forgotPassword.module.scss'
 
+const emailSchema = z.object({
+  email: z.string({ required_error: 'Email is required' }).email(),
+})
+
+type FormValues = z.infer<typeof emailSchema>
+
 export const ForgotPassword = () => {
+  const {
+    control,
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: zodResolver(emailSchema),
+  })
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data)
+  }
+
   return (
-    <Card>
-      <div className={s.content}>
-        <Typography variant="large" className={s.title}>
-          Forgot your password?
-        </Typography>
-        <Input
-          label="Email"
-          name="email"
-          placeholder="Email"
-          type="email"
-          onChange={() => {}}
-          value={''}
-        />
-        <Typography variant="body2" className={s.text}>
-          Enter your email address and we will send you further instructions
-        </Typography>
-        <div className={s.sendButton}>
-          <Button variant="primary" fullWidth>
-            <Typography variant="subtitle2">Send Insrtuctions</Typography>
-          </Button>
+    <>
+      <DevTool control={control} />
+      <Card>
+        <div className={s.content}>
+          <Typography variant="large" className={s.title}>
+            Forgot your password?
+          </Typography>
+          <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'contents' }}>
+            <ControlledInput
+              label="Email"
+              placeholder="Email"
+              type="email"
+              {...register('email')}
+              errorMessage={errors.email?.message}
+              control={control}
+            />
+            <Typography variant="body2" className={s.text}>
+              Enter your email address and we will send you further instructions
+            </Typography>
+            <div className={s.sendButton}>
+              <Button variant="primary" fullWidth>
+                <Typography variant="subtitle2">Send Insrtuctions</Typography>
+              </Button>
+            </div>
+          </form>
+          <Typography variant="body2" className={s.questionText}>
+            Did you remember your password?
+          </Typography>
+          <Button variant="link">Try logging in</Button>
         </div>
-        <Typography variant="body2" className={s.questionText}>
-          Did you remember your password?
-        </Typography>
-        <Button variant="link">Try logging in</Button>
-      </div>
-    </Card>
+      </Card>
+    </>
   )
 }

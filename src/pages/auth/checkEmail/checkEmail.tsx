@@ -1,11 +1,13 @@
-import SvgEmail from '../../../../icons/email'
-import { Button } from '../../button'
-import { Card } from '../../card/card'
-import { Typography } from '../../typography/typography'
+import { Button, Card, Typography } from '../../../components'
+import SvgEmail from '../../../icons/email'
 
 import s from './checkEmail.module.scss'
 
-export const CheckEmail = () => {
+type CheckEmailProps = {
+  email: string
+}
+
+export const CheckEmail = ({ email }: CheckEmailProps) => {
   return (
     <Card>
       <div className={s.content}>
@@ -14,7 +16,7 @@ export const CheckEmail = () => {
         </Typography>
         <SvgEmail className={s.icon} />
         <Typography variant="body2" className={s.text}>
-          We’ve sent an Email with instructions to example@mail.com
+          We’ve sent an Email with instructions to {email}
         </Typography>
         <div className={s.sendButton}>
           <Button variant="primary" fullWidth>
