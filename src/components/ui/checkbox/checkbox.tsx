@@ -17,12 +17,7 @@ export type CheckBoxProps = {
 export const CheckBox: FC<CheckBoxProps> = ({ label, checked, onChange }) => {
   return (
     <div className={s.root}>
-      <Checkbox.Root
-        className={s.checkBoxRoot}
-        defaultChecked
-        checked={checked}
-        onCheckedChange={onChange}
-      >
+      <Checkbox.Root className={s.checkBoxRoot} checked={checked} onCheckedChange={onChange}>
         <Checkbox.Indicator className={s.CheckboxIndicator}>
           <SvgCheckBox className={s.icon} />
         </Checkbox.Indicator>
