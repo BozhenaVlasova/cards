@@ -1,11 +1,14 @@
-import { Button } from './components/ui/button'
+import s from './App.module.scss'
+import { Header } from './components/ui/header/header'
+import { Router } from './router'
 
 export function App() {
   return (
-    <div>
-      <Button variant="primary" as="a" href={'/link'}>
-        Hello
-      </Button>
-    </div>
+    <>
+      <Header />
+      <div className={s.content}>
+        <Router />
+      </div>
+    </>
   )
 }
