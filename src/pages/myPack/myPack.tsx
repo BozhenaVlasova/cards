@@ -1,15 +1,13 @@
-import { DialogComponent } from '../../components/ui/dialog/dialog'
-import { DropdownMenuComponent } from '../../components/ui/dropDownMenu/dropDownMenu'
-import { Input } from '../../components/ui/input/input'
-import { TableComponent } from '../../components/ui/table/table'
-import { Typography } from '../../components/ui/typography/typography'
-import SvgBack from '../../icons/back'
-import SvgEdit from '../../icons/edit'
-import SvgStar from '../../icons/star'
-import SvgStarOutline from '../../icons/starOutline'
-import SvgTrash from '../../icons/trash'
-
 import s from './myPack.module.scss'
+
+import { SvgBack, SvgEdit, SvgStar, SvgStarOutline, SvgTrash } from '@/assets/icons'
+import {
+  DialogComponent,
+  DropdownMenuComponent,
+  Input,
+  TableComponent,
+  Typography,
+} from '@/components/ui'
 
 export const MyPack = () => {
   return (

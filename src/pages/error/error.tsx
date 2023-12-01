@@ -1,8 +1,7 @@
-import { Button } from '../../components/ui/button'
-import { Typography } from '../../components/ui/typography/typography'
-import { SvgError } from '../../icons/error'
-
 import s from './error.module.scss'
+
+import SvgError from '@/assets/icons/error'
+import { Button, Typography } from '@/components/ui'
 
 export const Error = () => {
   return (

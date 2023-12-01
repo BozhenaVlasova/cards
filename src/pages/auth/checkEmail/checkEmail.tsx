@@ -1,7 +1,7 @@
-import { Button, Card, Typography } from '../../../components'
-import SvgEmail from '../../../icons/email'
-
 import s from './checkEmail.module.scss'
+
+import SvgEmail from '@/assets/icons/email'
+import { Button, Card, Typography } from '@/components/ui'
 
 type CheckEmailProps = {
   email: string

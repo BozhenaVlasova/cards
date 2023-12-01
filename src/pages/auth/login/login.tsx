@@ -3,9 +3,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button, Card, ControlledCheckbox, ControlledInput, Typography } from '../../../components'
-
 import s from './login.module.scss'
+
+import { Button, Card, ControlledCheckbox, ControlledInput, Typography } from '@/components/ui'
 
 const loginSchema = z.object({
   email: z.string({ required_error: 'Email is required' }).email(),
@@ -58,7 +58,7 @@ export const Login = () => {
                 control={control}
               />
             </div>
-            <ControlledCheckbox label={'remember me'} control={control} name={'rememberMe'} />
+            <ControlledCheckbox label={'Remember me'} control={control} name={'rememberMe'} />
             <div className={s.sendButton}>
               <Button type="submit" variant="primary" fullWidth>
                 <Typography variant="subtitle2">Sign In</Typography>

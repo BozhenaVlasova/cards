@@ -3,13 +3,10 @@ import { useState } from 'react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { useForm } from 'react-hook-form'
 
-import { ControlledRadioGroup } from '../../components'
-import { Button } from '../../components/ui/button'
-import { Card } from '../../components/ui/card/card'
-import { Typography } from '../../components/ui/typography/typography'
-import SvgBack from '../../icons/back'
-
 import s from './pagePack.module.scss'
+
+import SvgBack from '@/assets/icons/back'
+import { ControlledRadioGroup, Button, Card, Typography } from '@/components/ui'
 
 export const CollapsibleComponent = () => {
   const [open, setOpen] = useState(false)

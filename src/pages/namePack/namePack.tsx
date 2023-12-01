@@ -1,8 +1,7 @@
-import { Button } from '../../components/ui/button'
-import { Typography } from '../../components/ui/typography/typography'
-import SvgBack from '../../icons/back'
-
 import s from './namePack.module.scss'
+
+import SvgBack from '@/assets/icons/back'
+import { Button, Typography } from '@/components/ui'
 
 export const NamePack = () => {
   return (

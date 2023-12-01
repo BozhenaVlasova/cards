@@ -3,9 +3,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button, Card, ControlledInput, Typography } from '../../../components'
-
 import s from './signUp.module.scss'
+
+import { Button, Card, ControlledInput, Typography } from '@/components/ui'
 
 const registrationSchema = z
   .object({

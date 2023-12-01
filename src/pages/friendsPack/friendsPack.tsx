@@ -1,12 +1,7 @@
-import { Button } from '../../components/ui/button'
-import { Input } from '../../components/ui/input/input'
-import { TableComponent } from '../../components/ui/table/table'
-import { Typography } from '../../components/ui/typography/typography'
-import SvgBack from '../../icons/back'
-import SvgStar from '../../icons/star'
-import SvgStarOutline from '../../icons/starOutline'
-
 import s from './friendsPack.module.scss'
+
+import { SvgBack, SvgStar, SvgStarOutline } from '@/assets/icons'
+import { Button, Input, TableComponent, Typography } from '@/components/ui'
 
 export const FriendsPack = () => {
   return (
