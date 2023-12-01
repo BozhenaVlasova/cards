@@ -1,5 +1,5 @@
 import { SVGProps } from 'react'
-export const SvgError = (props: SVGProps<SVGSVGElement>) => (
+const SvgError = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={451} height={193} fill="none" {...props}>
     <path fill="url(#a)" d="M296.1 16v16.2H193.4V2.1h-73.5v173.4h73.5l181.5 1.1V16h-78.8Z" />
     <path
@@ -283,3 +283,5 @@ export const SvgError = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default SvgError

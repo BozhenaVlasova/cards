@@ -1,5 +1,5 @@
 import { SVGProps } from 'react'
-export const SvgLogout = (props: SVGProps<SVGSVGElement>) => (
+const SvgLogout = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={16}
     height={16}
@@ -18,3 +18,5 @@ export const SvgLogout = (props: SVGProps<SVGSVGElement>) => (
     </defs>
   </svg>
 )
+
+export default SvgLogout
