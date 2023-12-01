@@ -2,9 +2,9 @@ import { FC, ReactNode } from 'react'
 
 import { Table } from '@radix-ui/themes'
 
-import { Typography } from '../typography/typography'
-
 import s from './table.module.scss'
+
+import { Typography } from '@/components/ui/typography'
 
 interface TableComponentType {
   variant: 'myPack' | 'friendsPack' | 'packList'

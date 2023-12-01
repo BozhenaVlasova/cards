@@ -3,9 +3,9 @@ import { FC } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import * as Select from '@radix-ui/react-select'
 
-import { Typography } from '../typography/typography'
-
 import s from './select.module.scss'
+
+import { Typography } from '@/components/ui/typography'
 
 interface SelectType {
   id: number

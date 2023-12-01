@@ -3,10 +3,10 @@ import { FC, ReactNode } from 'react'
 import * as Checkbox from '@radix-ui/react-checkbox'
 import { Label } from '@radix-ui/react-label'
 
-import SvgCheckBox from '../../../icons/checkBox'
-import { Typography } from '../typography/typography'
-
 import s from './checkbox.module.scss'
+
+import SvgCheckBox from '@/assets/icons/checkBox'
+import { Typography } from '@/components/ui/typography'
 
 export type CheckBoxProps = {
   label?: ReactNode

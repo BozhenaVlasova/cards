@@ -1,13 +1,9 @@
 import { ChangeEvent, FC, useState } from 'react'
 
-import SvgEdit from '../../icons/edit'
-import { SvgLogout } from '../../icons/logout'
-import { Button } from '../ui/button'
-import { Card } from '../ui/card/card'
-import { Input } from '../ui/input/input'
-import { Typography } from '../ui/typography/typography'
-
 import s from './profileInfo.module.scss'
+
+import { SvgEdit, SvgLogout } from '@/assets/icons'
+import { Button, Card, Input, Typography } from '@/components/ui'
 
 interface ProfileInfoType {
   name: string

@@ -2,9 +2,9 @@ import { FC } from 'react'
 
 import * as Tabs from '@radix-ui/react-tabs'
 
-import { Typography } from '../typography/typography'
-
 import s from './tabSwitcher.module.scss'
+
+import { Typography } from '@/components/ui/typography'
 
 interface TabSwitcherType {
   values: TSType[]

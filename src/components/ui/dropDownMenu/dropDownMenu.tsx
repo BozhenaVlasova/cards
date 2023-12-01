@@ -2,16 +2,10 @@ import { FC } from 'react'
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
-import SvgEdit from '../../../icons/edit'
-import SvgLearn from '../../../icons/learn'
-import { SvgLogout } from '../../../icons/logout'
-import SvgMore from '../../../icons/moreVertical'
-import SvgPesron from '../../../icons/person'
-import SvgTrash from '../../../icons/trash'
-import { AvatarComponent } from '../avatar/avatar'
-import { Typography } from '../typography/typography'
-
 import s from './dropDownMenu.module.scss'
+
+import { SvgEdit, SvgLearn, SvgLogout, SvgMore, SvgPesron, SvgTrash } from '@/assets/icons'
+import { AvatarComponent, Typography } from '@/components/ui'
 
 interface DropdownPersonType {
   value: 'profile' | 'more'

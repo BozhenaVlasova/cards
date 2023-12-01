@@ -2,12 +2,10 @@ import { ChangeEvent, useState, ComponentPropsWithoutRef, forwardRef } from 'rea
 
 import { TextField } from '@radix-ui/themes'
 
-import SvgEyeOffOutline from '../../../icons/eyeOffOutline'
-import SvgEyeOutline from '../../../icons/eyeOutline'
-import SvgSearch from '../../../icons/search'
-import { Typography } from '../typography/typography'
-
 import s from './input.module.scss'
+
+import { SvgEyeOffOutline, SvgEyeOutline, SvgSearch } from '@/assets/icons'
+import { Typography } from '@/components/ui/typography'
 
 export type InputProps = {
   type: 'text' | 'number' | 'email' | 'password' | 'find'

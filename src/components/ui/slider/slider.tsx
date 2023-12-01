@@ -2,9 +2,9 @@ import { FC, useState } from 'react'
 
 import * as RadixSlider from '@radix-ui/react-slider'
 
-import { Typography } from '../typography/typography'
-
 import s from './slider.module.scss'
+
+import { Typography } from '@/components/ui/typography'
 
 interface SliderProps {
   start: number

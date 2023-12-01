@@ -1,8 +1,7 @@
-import SvgLogo from '../../../icons/logo'
-import { Button } from '../button'
-import { Typography } from '../typography/typography'
-
 import s from './header.module.scss'
+
+import SvgLogo from '@/assets/icons/logo'
+import { Button, Typography } from '@/components/ui'
 
 export const Header = () => {
   return (

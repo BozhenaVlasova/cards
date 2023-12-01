@@ -2,14 +2,10 @@ import { FC } from 'react'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
-import SvgClose from '../../../icons/close'
-import { Button } from '../button'
-import { CheckBox } from '../checkbox/checkbox'
-import { Input } from '../input/input'
-import { SelectComponent } from '../select/select'
-import { Typography } from '../typography/typography'
-
 import s from './dialog.module.scss'
+
+import SvgClose from '@/assets/icons/close'
+import { Button, CheckBox, Input, SelectComponent, Typography } from '@/components/ui'
 
 interface DialogComponentType {
   value: 'addPack' | 'editPack' | 'deletePack' | 'addNewCard' | 'editCard' | 'deleteCard'
