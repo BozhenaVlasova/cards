@@ -16,10 +16,11 @@ interface SelectType {
 interface SelectItemType {
   label: string
   values: SelectType[]
+  className?: string
 }
 
-export const SelectComponent: FC<SelectItemType> = ({ label, values }) => (
-  <div className={s.selectRoot}>
+export const SelectComponent: FC<SelectItemType> = ({ label, values, className }) => (
+  <div className={`${className}`}>
     <Select.Root>
       <Typography variant="body2" className={s.selectLabel}>
         {label}
