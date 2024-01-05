@@ -60,6 +60,7 @@ export const DialogComponent: FC<DialogComponentType> = ({ value }) => (
         {(value === 'addNewCard' || value === 'editCard') && (
           <fieldset className={s.dialogFieldset}>
             <SelectComponent
+              className={s.select}
               values={[
                 { id: 1, item: 'Text', value: 'text' },
                 { id: 2, item: 'Message', value: 'message' },

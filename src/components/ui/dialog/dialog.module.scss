@@ -70,6 +70,12 @@ svg {
   margin-left: 5px;
 }
 
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 @keyframes overlayShow {
   from {
     opacity: 0;
